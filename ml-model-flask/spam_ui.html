@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spam Email Detector</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow p-4">
+    <h2 class="mb-3 text-center">📧 Spam Email Detector</h2>
+
+    <div class="form-group mb-3">
+      <label for="emailContent" class="form-label">Enter Email Text:</label>
+      <textarea class="form-control" id="emailContent" rows="6" placeholder="Paste your email content here..."></textarea>
+    </div>
+
+    <button class="btn btn-primary w-100" onclick="checkSpam()">Check Spam</button>
+
+    <div class="mt-4" id="resultArea" style="display: none;">
+      <h4>Result:</h4>
+      <div id="resultText" class="alert"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkSpam() {
+    const content = document.getElementById("emailContent").value;
+
+    fetch("http://localhost:8081/api/check-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ content })
+    })
+    .then(res => res.text())
+    .then(data => {
+      const resultArea = document.getElementById("resultArea");
+      const resultText = document.getElementById("resultText");
+      resultArea.style.display = "block";
+
+      if (data.toLowerCase().includes("spam")) {
+        resultText.className = "alert alert-danger";
+        resultText.innerText = "🚫 This email is likely SPAM!";
+      } else {
+        resultText.className = "alert alert-success";
+        resultText.innerText = "✅ This email seems clean (Not Spam)";
+      }
+    })
+    .catch(err => {
+      alert("Error connecting to backend: " + err);
+    });
+  }
+</script>
+
+</body>
+</html>

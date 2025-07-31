@@ -1,0 +1,4 @@
+com\example\spamdetector\service\SpamDetectionService.class
+com\example\spamdetector\model\EmailRequest.class
+com\example\spamdetector\SpamDetectorApplication.class
+com\example\spamdetector\controller\SpamDetectorController.class
