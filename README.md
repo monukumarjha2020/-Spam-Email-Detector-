@@ -95,7 +95,7 @@ python app.py                         # Start Flask API (localhost:5000)
 
 ## 👨‍💻 Author
 
-- **Your Name** – [Monu Kumar]([https://github.com/yourgithub](https://github.com/monukumarjha2020))
+- [Monu Kumar]([https://github.com/yourgithub](https://github.com/monukumarjha2020))
 
 ---
 
