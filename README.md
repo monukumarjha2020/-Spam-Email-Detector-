@@ -17,7 +17,7 @@ Paste any email content and find out if it's 📭 SPAM or ✅ NOT SPAM in second
 ## 🖥️ Project Preview
 
 > 🔗 Paste email → 🧠 AI predicts → ✅ Shows result  
-![Preview](https://img.icons8.com/emoji/48/rocket.) *(Add your own GIF or screenshot)*
+![Preview](https://github.com/monukumarjha2020/-Spam-Email-Detector-/blob/main/Screenshot%20(3739).png) *(Add your own GIF or screenshot)*
 
 ---
 
